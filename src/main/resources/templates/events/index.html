@@ -8,13 +8,18 @@
 <h1>All Events</h1>
 <p th:unless="${events} and ${events.size()}">No Events!</p>
 <table class="table table-striped">
-    <thead>
+    <thead class="thead-dark">
     <tr>
-        <th>Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Address</th>
+        <th scope="col">Photo</th>
     </tr>
     </thead>
-    <tr th:each="event : ${events}">
-        <td th:text="${event}"><</td>
+    <tr scope="row" th:each="event : ${events}">
+        <td th:text="${event.key}"></td>
+        <td th:text="${event.value}"></td>
+
     </tr>
 </table>
 
